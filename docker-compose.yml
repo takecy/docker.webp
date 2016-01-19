@@ -1,0 +1,5 @@
+redis:
+  image: takecy/webp
+  container_name: webp_api
+  ports:
+   - "3001:3001"
