@@ -12,3 +12,5 @@ RUN wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/
 ENV PATH $PATH:/usr/local/webp/libwebp-0.5.0-linux-x86-64/bin
 RUN cwebp -h \
  && dwebp -h
+
+WORKDIR /usr/local/img
