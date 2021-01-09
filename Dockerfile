@@ -1,15 +1,13 @@
-FROM ubuntu:latest
+FROM alpine:3.12
 
-MAINTAINER takecy
-
-RUN apt-get -y update \
- && apt-get install -y wget
-
+LABEL maintainer=takecy
 WORKDIR /usr/local/webp
-RUN wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-0.5.0-linux-x86-64.tar.gz \
- && tar xfvz libwebp-0.5.0-linux-x86-64.tar.gz
 
-ENV PATH $PATH:/usr/local/webp/libwebp-0.5.0-linux-x86-64/bin
+ENV WEBP_VERSION 1.1.0-r0
+
+RUN apk update\
+ && apk add --no-cache ca-certificates tzdata openssl libwebp-tools=${WEBP_VERSION} bash
+
 RUN cwebp -h \
  && dwebp -h
 
