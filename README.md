@@ -15,8 +15,8 @@ ex)
 -rw-r--r-- 1 takecy staff  62754  1 20 19:03 sample_2.webp
 ```
 
-<br/>
 ## Quick Start
+
 ```bash
 $ make run
 $ docker exec d_webp cwebp -o webp/sample_1.webp sample_1.jpg
@@ -39,6 +39,5 @@ sample_1.webp
 $ make stop
 ```
 
-<br/>
 ## License
 [MIT](./LICENSE)
